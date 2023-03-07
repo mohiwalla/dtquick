@@ -1,1 +1,280 @@
-console.log("hello world")
+document.head.innerHTML += `
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat" rel="stylesheet">
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+<style>
+        * {
+            font-family: "Montserrat", sans-serif;
+        }
+
+        .tcenter {
+            text-align: center;
+        }
+
+        .center {
+            align-items: center;
+            justify-content: center;
+        }
+
+        .flex {
+            display: flex;
+        }
+
+        body {
+            padding: 30px;
+            min-height: 105vh;
+            margin-bottom: 2vh;
+        }
+
+        #table,
+        #table th,
+        #table tr,
+        #table td,
+        #table thead,
+        #table tbody {
+            padding: 5px 40px;
+            border-collapse: collapse;
+            border: 1px solid black;
+        }
+
+        span {
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        th {
+            user-select: none;
+            cursor: pointer;
+            text-align: left;
+        }
+
+        .limitDiv {
+            float: left;
+        }
+
+        #limit {
+            font-size: 15px;
+            margin-left: 10px;
+            font-weight: 700;
+            outline: none;
+            padding: 5px;
+            border-radius: 5px;
+        }
+
+        .searchDiv {
+            float: right;
+        }
+
+        #search {
+            padding: 5px;
+            border-radius: 5px;
+            border: 1px solid black;
+            outline: none;
+            font-size: 15px;
+        }
+
+        .order {
+            width: 20px;
+            height: 15px;
+            margin-left: 10px;
+            top: 169px;
+            transition: all 0.3s;
+        }
+    </style>`;
+
+document.getElementById("datatable").innerHTML += `
+
+<div class="limitDiv">
+        <span>Limit</span>
+        <select name="limit" id="limit">
+            <option value="10">10</option>
+            <option value="20">20</option>
+            <option value="30">30</option>
+            <option value="40">40</option>
+            <option value="50">50</option>
+            <!-- <option value="All">All</option> -->
+        </select>
+</div>
+
+
+<div class="searchDiv">
+        <span>Search</span>
+        <input type="text" name="search" oninput="key = value; pageNo = 1; fetch();" id="search">
+</div><br><br><br>
+
+
+<div class="flex center">
+        <img id="loading" src="loading.gif" draggable="false"
+            style="position:absolute; mix-blend-mode:darken; display:none;" alt="">
+        <table style="width:95vw;" id="table">
+            <thead><tr id="th"></tr></thead>
+<tbody id="tbody"></tbody>
+</table>
+</div><br>`;
+
+cols = document
+  .getElementById("datatable")
+  .getAttribute("cols")
+  .replace(/ /g, "")
+  .split(",");
+for (i = 0; i < cols.length; i++) {
+  col = cols[i].split("=");
+  document.getElementById("th").innerHTML +=
+    `<th onclick="pageNo = 1; checkOrder(this); orderBy = '` +
+    col[1] +
+    `'; fetch();" class="th asc" >` +
+    col[0] +
+    `<img
+    style="cursor: pointer;" src='dn2.png' class="order"></th>`;
+}
+
+document.getElementById("datatable").innerHTML += `
+<div id="pages">
+<nav>
+    <ul class="pagination justify-content-end">
+    </ul>
+</nav>
+<div style="float:left; margin-top:-45px;" class="info"></div>
+    `;
+
+function setPagination() {
+  document.getElementsByClassName("pagination")[0].innerHTML = "";
+  for (i = 0; i < Math.ceil(response["total"] / limit); i++) {
+    document.getElementsByClassName(
+      "pagination"
+    )[0].innerHTML += `<li class="page-item"><a onclick="changePage(innerHTML)" class="page-link page${
+      i + 1
+    }">${i + 1}</a></li>`;
+  }
+
+  if (response["total"] != 0)
+    document
+      .getElementsByClassName("page-item")
+      [pageNo - 1].classList.add("active");
+}
+
+function changePage(page) {
+  if (pageNo != page) {
+    document.querySelector(".page-item.active").classList.remove("active");
+    pageNo = page;
+    fetch();
+  }
+}
+
+id = (str) => document.getElementById(str);
+var orderBy = [cols[0].split("=")[1]],
+  limit = "10",
+  response,
+  key = "",
+  order = "ASC",
+  pageNo = 1,
+  j;
+
+id("limit").addEventListener("input", function () {
+  limit = this.value;
+  pageNo = 1;
+  fetch();
+});
+
+function fetch() {
+  const xhr = new XMLHttpRequest();
+
+  xhr.open(
+    "GET",
+    "fetchList.php?orderBy=" +
+      orderBy +
+      "&limit=" +
+      limit +
+      "&key=" +
+      key +
+      "&order=" +
+      order +
+      "&pageNo=" +
+      pageNo,
+    true
+  );
+  xhr.onreadystatechange = function () {
+    id("loading").style.display = "block";
+    if (this.readyState == 4 && this.status == 200) {
+      id("loading").style.display = "none";
+      response = JSON.parse(this.responseText);
+      setInfo();
+      setTable();
+      setPagination();
+    }
+  };
+  xhr.send();
+}
+
+function setInfo() {
+  till = response["found"];
+  document.getElementsByClassName("info")[0].innerHTML =
+    "Showing " + till + " out of " + response["total"];
+}
+
+function setTable() {
+  data = response["data"];
+  document.getElementById("tbody").innerHTML = "";
+  till = response["found"];
+  i = 0;
+  while (i < till) {
+    j = -1;
+    document.getElementById("tbody").innerHTML +=
+      `<tr><td>` +
+      data[i][cols[inc(j)].split("=")[1]] +
+      `</td><td>` +
+      data[i][cols[inc(j)].split("=")[1]] +
+      `</td><td>` +
+      data[i][cols[inc(j)].split("=")[1]] +
+      `</td><td>` +
+      data[i][cols[inc(j)].split("=")[1]] +
+      `</td><td>` +
+      data[i][cols[inc(j)].split("=")[1]] +
+      `</td></tr>`;
+    i++;
+  }
+}
+
+function checkOrder(obj) {
+  setArrows();
+  if (obj.classList.contains("asc")) {
+    removeASC();
+    obj.classList.remove("asc");
+    obj.style.transform = "";
+    obj.children[0].style.transform = "rotate(-180deg) scale(1.2)";
+    order = "DESC";
+  } else {
+    removeASC();
+    obj.classList.add("asc");
+    obj.children[0].style.transform = "scale(1.7)";
+    order = "ASC";
+  }
+}
+
+function inc(val) {
+  return (j = ++val);
+}
+
+function removeASC() {
+  ths = document.getElementsByClassName("th");
+  for (i = 0; i < ths.length; i++) ths[i].classList.remove("asc");
+}
+
+function setArrows() {
+  arrows = document.getElementsByClassName("order");
+  for (i = 0; i < arrows.length; i++) {
+    arrows[i].style.transform = "rotate(0deg) scale(1)";
+  }
+}
+
+document.addEventListener("keydown", function () {
+  document.getElementById("search").focus();
+});
+
+document.addEventListener("load", fetch());
