@@ -1,0 +1,57 @@
+<?php
+
+$con = mysqli_connect("localhost", 'root', '', "newdb");
+if (!$con)
+    exit("Ducked so bad");
+
+$orderBy = $_REQUEST['orderBy'];
+$order = $_REQUEST['order'];
+$limit = $_REQUEST['limit'];
+$searchValue = $_REQUEST['key'];
+$pageNo = $_REQUEST['pageNo'];
+
+if ($pageNo == 1)
+    $rowsPerPage = '';
+else
+    $rowsPerPage = ($pageNo - 1) * $limit . ", ";
+
+
+$searchQuery = " ";
+if ($searchValue != '') {
+    $searchQuery = " and `S` like '%" . $searchValue . "%' or 
+    `Name` like '%" . $searchValue . "%' or 
+    `Email` like '%" . $searchValue . "%' or 
+    `Password` like '%" . $searchValue . "%' or 
+    `Address` like '%" . $searchValue . "%'";
+}
+
+$query = "SELECT * from `usersinfo` where 1 $searchQuery ORDER BY `$orderBy` $order limit $rowsPerPage $limit ;";
+$rows = mysqli_query($con, $query);
+if (!$rows)
+    echo "ducked";
+
+$found = 0;
+$data = array();
+
+while ($row = mysqli_fetch_assoc($rows)) {
+    $found++;
+    $data[] = array(
+        'S' => $row['S'],
+        'Name' => $row['Name'],
+        'Email' => $row['Email'],
+        'Password' => $row['Password'],
+        'Address' => $row['Address']
+    );
+}
+
+$total = mysqli_fetch_assoc(mysqli_query($con, "SELECT count(*) as allcount from `usersinfo` where 1 $searchQuery;"))['allcount'];
+
+$response = array(
+    "data" => $data,
+    "found" => $found,
+    "total" => $total
+);
+
+echo json_encode($response);
+
+?>
