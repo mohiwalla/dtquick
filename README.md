@@ -17,6 +17,7 @@ The client-side part means which the user will see in table as coloumn name and 
 
 
 Once you have initialized the dataTablesLite in you index.html, then when ever the page will load the `function fetch()` will be called which will send five arguments to fetchList.php. Which are:
+
 i) `orderBy` : a coloumn name according to which rows are desired to arrange;
 
 ii) `order` : could be either 'ASC' or 'DESC' to sort elements in ascending or desending order;
