@@ -1,4 +1,4 @@
-# `Data Tables Lite`
+# `dataTables`
 
 You have been provided an example of server-side scripting using PHP.
 In your html file you just need to to paste this kind of CDN :-
