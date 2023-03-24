@@ -3,13 +3,15 @@
 You have been provided an example of server-side scripting using PHP.
 In your html file you just need to to paste this kind of CDN :-
 
-`https://mohiwalla.github.io/cdn.js/`
+```
+https://mohiwalla.github.io/cdn.js/
+```
 
 And then initialize the `dataTablesLite` just by creating a div with `id="datatable"`. 
 In the div you have to add an attribute named `cols` and write all the columns seprated with a comma.
 
 
-`Example: <div id="datatable" cols="S. no. = S,name = Name, E-mail = Email, Pass =Password,     Addresses = Address"></div>`
+`Example: <div id="datatable" cols="S. no. = S,name = Name, E-mail = Email, Pass = Password, Addresses = Address"></div>`
 
 The assignment operator is to divide the client side part and server side part and luckily extra spaces don't matter.
 
