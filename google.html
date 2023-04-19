@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        * {
+            font-family: 'Montserrat', sans-serif;
+            user-select: none !important;
+        }
+
+        body {
+            display: grid;
+            padding: 50px 0;
+            place-items: center;
+        }
+
+        #nameNimg {
+            padding: 0 0 25px 0;
+            display: flex;
+        }
+
+        #fullName {
+            font-weight: 900;
+            color: transparent;
+            background: linear-gradient(90deg, rgb(0, 225, 255), rgb(0, 60, 255));
+            -webkit-background-clip: text;
+        }
+
+        .flex {
+            display: flex;
+            gap: 100px;
+        }
+
+        #dp {
+            max-width: 50px;
+            max-height: 50px;
+            margin-right: 25px;
+        }
+
+        input[type=text],
+        input[type=email],
+        input[type=password] {
+            width: 300px !important;
+        }
+    </style>
+
+</head>
+
+<body>
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <div id="g_id_onload" data-client_id="516366002310-2oqtmkdkuf01md70tlcgeis7d07rsuk3.apps.googleusercontent.com"
+        data-callback="success"></div>
+    <div class="g_id_signin" data-type="standard"></div>
+
+    <script>
+        function success(response) {
+            const decodedCredential = jwt_decode(response.credential);
+            console.table(decodedCredential)
+            document.body.innerHTML = `<div id="nameNimg"><img id="dp" src="${decodedCredential.picture}" alt="Your Image Here 🙂"><h1 id="fullName">Hey, ${decodedCredential.given_name}</h1></div>
+            <div class="flex">
+        <div class="mb-3 mt-3">
+            <label for="name" class="form-label">Name:</label>
+            <input type="text" class="form-control" id="name" value="${decodedCredential.name}" placeholder="Your name...">
+        </div>
+        <div class="mb-3 mt-3">
+            <label for="email" class="form-label">E-mail:</label>
+            <input type="email" value="${decodedCredential.email}" readonly class="form-control" id="email">
+        </div>
+    </div>
+
+    <div class="flex">
+        <div class="mb-3 mt-3">
+            <label for="pass" class="form-label">Password: </label>
+            <input type="password" placeholder="Must have atleast 8 Characters" required name="pass"
+                class="form-control" id="pass">
+        </div>
+        <div class="mb-3 mt-3">
+            <label for="Cpass" class="form-label">Confirm Password</label>
+            <input type="password" placeholder="Confirm here" required name="cpass" class="form-control" id="Cpass">
+        </div>
+    </div><br>
+    <div class="mb-3 form-check flex">
+        <input type="checkbox" class="form-check-input" oninput="showpass()" id="showPass">
+        <label style="margin-left: -90px;" class="form-check-label" for="showPass">Show password</label>
+        <button type="button" class="btn btn-secondary" style="margin-top: -7px; margin-left: 140px;"
+            onclick="generatePass()" style="float:right;">Suggest Password</button>
+    </div>
+    <div class="flex" style="gap: 5px;">
+        By submitting my details, I agree to our <a href="https://www.example.com">Privacy Policy</a> and <a
+            href="https://www.example.com">Terms of usage</a> of your data
+    </div><br>
+
+    <button onclick="hidepass()" type="submit" class="btn btn-primary">Create my free Account</button>
+            `;
+        }
+    </script>
+
+    <script>
+        id = (str) => {
+            return document.getElementById(str);
+        }
+
+        function generatePass() {
+            const uppercase = [
+                "A",
+                "B",
+                "C",
+                "D",
+                "E",
+                "F",
+                "G",
+                "H",
+                "I",
+                "J",
+                "K",
+                "L",
+                "M",
+                "N",
+                "O",
+                "P",
+                "Q",
+                "R",
+                "S",
+                "T",
+                "U",
+                "V",
+                "W",
+                "X",
+                "Y",
+                "Z",
+            ];
+            const lowercase = [
+                "a",
+                "b",
+                "c",
+                "d",
+                "e",
+                "f",
+                "g",
+                "h",
+                "i",
+                "j",
+                "k",
+                "l",
+                "m",
+                "n",
+                "o",
+                "p",
+                "q",
+                "r",
+                "s",
+                "t",
+                "u",
+                "v",
+                "w",
+                "x",
+                "y",
+                "z",
+            ];
+            const numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+
+            let password = "";
+
+            arr = [numbers, lowercase, uppercase];
+
+            for (i = 0; i < 16; i++) {
+                rac = arr[rand(3)]; // Random Array of Characters
+                makePassword(rac[rand(rac.length)]);
+            }
+
+            function makePassword(str) {
+                password = password.concat(str);
+            }
+
+            id("pass").value = password;
+            id("Cpass").value = password;
+            if (!id("showPass").checked)
+                id("showPass").click();
+        }
+
+        function rand(num) {
+            return Math.floor(Math.random() * num);
+        }
+
+        function showpass() {
+            checkbox = document.getElementById('showPass');
+            if (checkbox.checked) {
+                document.getElementById("pass").type = "text";
+                document.getElementById("Cpass").type = "text";
+            }
+            else {
+                document.getElementById("pass").type = "password";
+                document.getElementById("Cpass").type = "password";
+            }
+        }
+        function hidepass() {
+            document.getElementById("pass").type = "password";
+            document.getElementById("Cpass").type = "password";
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.7/dist/umd/popper.min.js"
+        integrity="sha384-zYPOMqeu1DAVkHiLqWBUTcbYfZ8osu1Nd6Z89ify25QV9guujx43ITvfi12/QExE"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.min.js"
+        integrity="sha384-Y4oOpwW3duJdCWv5ly8SCFYWqFDsfob/3GkgExXKV4idmbt98QcxXYs9UoXAB7BZ"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/jwt-decode/build/jwt-decode.js"></script>
+</body>
+
+</html>
