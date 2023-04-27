@@ -4,8 +4,8 @@ DataTables Quick is a extremely light, fast and easy to use pre-written dyanmic 
 
 In your client-side file you just need to include the script:
 
-```JS
-<script src="https://mohiwalla.github.io/cdn.js/"></script><script>
+```HTML
+<script src="https://mohiwalla.github.io/cdn.js/"></script>
 ```
 
 Or just copy the code from [index.html](https://github.com/mohiwalla/cdn.js/blob/mohiwalla/index.html)
@@ -21,16 +21,21 @@ It takes the name of the table as an argument to use it in the mysql query at se
 
 ## cols
 
-All the name of the columns which you want to display in the table should be specified here in comma-seprated form (and no need to worry about the extra or less spaces). Every column name contains two parts one before the assignment operator for client-side to display in the table's `<th>` and another for the server-side (which name you have used to created the column in database).
+All the name of the columns which you want to display in the table should be specified here in comma-seprated form (and no need to worry about the extra or less spaces). Every column name contains two parts one before the assignment operator for client-side to display in the table's `<th>` and another for the server-side (which name you have used to created the column in database) something like this...
 
-`Example: <div id="datatable" cols="S. no. = S,name = Name, E-mail = Email, Pass = Password, Addresses = Address"></div>`
+cols="S. no. = S,name = Name, E-mail = Email, Pass = Password"
 
 ## file-name
 
 Specify the name of your server-side file here, to whick the `DataTables Quick` will send an AJAX request for the data.
 
 
+# Complete example:
+```HTML
+<div id="datatable" db-table="datatable" file-name="fetchli.php" cols="Address = Address, Email = Email"></div>
 
+<script src="https://mohiwalla.github.io/cdn.js/"></script>
+```
 
 
 
