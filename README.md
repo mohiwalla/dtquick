@@ -1,37 +1,42 @@
-# `dataTables`
+# DataTables Quick
 
-You have been provided an example of server-side scripting using PHP.
-In your html file you just need to to paste this kind of CDN :-
+DataTables Quick is a extremely light, fast and easy to use pre-written dyanmic JavaScript code to help programmers to display there data from data-base with almost no husstle. It requires quite less server side code and generates the queries itself. It is extremely easy to use and saves tons of time.
 
+In your client-side file you just need to include the script:
+
+```JS
+<script src="https://mohiwalla.github.io/cdn.js/"></script><script>
 ```
-https://mohiwalla.github.io/cdn.js/
-```
 
-And then initialize the `dataTablesLite` just by creating a div with `id="datatable"`. 
-In the div you have to add an attribute named `cols` and write all the columns seprated with a comma.
+Or just copy the code from [index.html](https://github.com/mohiwalla/cdn.js/blob/mohiwalla/index.html)
 
+
+To initialize `DataTables Quick` you just need to add a `<div>` element with `id="datatable"`.
+
+Here are three `attributes` those have to be added in this `<div>`.
+
+## db-table
+
+It takes the name of the table as an argument to use it in the mysql query at server-side to fetch the data from the database.
+
+## cols
+
+All the name of the columns which you want to display in the table should be specified here in comma-seprated form (and no need to worry about the extra or less spaces). Every column name contains two parts one before the assignment operator for client-side to display in the table's `<th>` and another for the server-side (which name you have used to created the column in database).
 
 `Example: <div id="datatable" cols="S. no. = S,name = Name, E-mail = Email, Pass = Password, Addresses = Address"></div>`
 
-The assignment operator is to divide the client side part and server side part and luckily extra spaces don't matter.
+## file-name
 
-The client-side part means which the user will see in table as coloumn name and server-side part is said for the coloumn names (keys) in database.
+Specify the name of your server-side file here, to whick the `DataTables Quick` will send an AJAX request for the data.
 
 
-Once you have initialized the dataTablesLite in you index.html, then when ever the page will load the `function fetch()` will be called which will send five arguments to fetchList.php. Which are:
 
-i) `orderBy` : a coloumn name according to which rows are desired to arrange;
 
-ii) `order` : could be either 'ASC' or 'DESC' to sort elements in ascending or desending order;
 
-iii) `limit` : the number of rows to be display per page (selected from drop down);
 
-iv) `key`:  the search query entered in the search box;
+# Server-side file
 
-v) `pageNo` : the page number on which the user clicked;
-
-You can use these arguments in you server-side script for fetching, searching and sorting.
-
+Server-side file should fetch the query. The total number of rows available in the table and the total found results as per query. You can use any server-side language with it as per you comfort. Here some sample codes for [PHP](https://github.com/mohiwalla/cdn.js/blob/mohiwalla/php.txt), [Coldfusion](https://github.com/mohiwalla/cdn.js/blob/mohiwalla/cfm.txt) and [node.js](https://github.com/mohiwalla/cdn.js/blob/mohiwalla/node.txt) have been provided.
 
 
 Credits : `Mr. Sumit Kumar Munjal`, `Mr. Prabhjot Singh`
@@ -40,6 +45,10 @@ Made by : `Kamaljot Singh`
 
 Inspired By : `DataTables`
 
+Contributers : [mohiwalla](https://github.com/mohiwalla/)
 
-#  `Note` :
-This is just a homework I did, given by my teachers, and is not intended to make money from. It has a lot of flaws and need to be improved and I definately I'll improve. So, dear `dataTables`, Please avoid to hit a blame on me 🙂
+
+#  Note
+Before you start using it in production, Please note that this file sends query from client-side to the server-side which is not tradional at all. As the result of which anyone from the client side directly can modify the query to fetch the data from the your table, which is a potential risk to your data. If you want to have better safety please consider using [DataTable Quick Secure](https://github.com/mohiwalla/cdn.js/blob/mohiwalla/datatable.html) as it creates queries at server end and lower the risk. The sole purpose of creating queries at client-end was to keep the structure of the both client and server side file simple and easy to use for newbies. And if you find any bugs in the code or any possible improvements wihtout compromising the simplicity of usage you can send pull request or modified code on this [WhatsApp number](tel:+918847314532). Existing code will be replaced by the code provided by you as soon as the eximination will finish and your name will be in the list of contributes as well, So don't hesitate to give it a try. Lastly if you found it useful please consider giving a star to this repository.
+
+Thanks a lot......
