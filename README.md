@@ -36,7 +36,7 @@ Specify the name of your server-side file here, to whick the `DataTables Quick` 
 
 # Server-side file
 
-Server-side file should fetch the query. The total number of rows available in the table and the total found results as per query. You can use any server-side language with it as per you comfort. Here some sample codes for [PHP](https://github.com/mohiwalla/cdn.js/blob/mohiwalla/php.txt), [Coldfusion](https://github.com/mohiwalla/cdn.js/blob/mohiwalla/cfm.txt) and [node.js](https://github.com/mohiwalla/cdn.js/blob/mohiwalla/node.txt) have been provided.
+Server-side file should fetch the query. The total number of rows available in the table and the total found results as per query. You can use any server-side language with it as per you comfort. Here some sample codes for [PHP](https://github.com/mohiwalla/cdn.js/blob/mohiwalla/php.php) and [node.js](https://github.com/mohiwalla/cdn.js/blob/mohiwalla/node.js) have been provided.
 
 
 Credits : `Mr. Sumit Kumar Munjal`, `Mr. Prabhjot Singh`
