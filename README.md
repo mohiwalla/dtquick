@@ -37,7 +37,7 @@ Specify the name of your server-side file here, to whick the `DataTables Quick` 
 
 # Complete example
 ```HTML
-<div id="datatable" db-table="datatable" file-name="fetchli.php" cols="Address = Address, Email = Email"></div>
+<div id="datatable" db-table="datatable" file-name="fetchli.php" cols="Address = Address,......"></div>
 
 <script src="https://mohiwalla.github.io/dtquick/"></script>
 ```
