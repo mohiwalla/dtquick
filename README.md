@@ -5,7 +5,9 @@ DataTables Quick is a extremely light, fast and easy to use pre-written dyanmic 
 You can either include this script tag in the `<head>` section of you document...
 
 ```HTML
+
 <script src="https://mohiwalla.github.io/dtquick/" async defer></script>
+
 ```
 
 or just copy the code from [index.html](https://github.com/mohiwalla/dtquick/blob/mohiwalla/index.html) and paste at the end of your document
@@ -37,7 +39,7 @@ Specify the name of your server-side file here, to whick the `DataTables Quick` 
 
 # Complete example
 ```HTML
-<div id="datatable" db-table="datatable" file-name="fetchli.php" cols="Address = Address,......"></div>
+<div id="datatable" db-table="datatable" file-name="fetch.php" cols="Address = Address,......"></div>
 
 <script src="https://mohiwalla.github.io/dtquick/"></script>
 ```
@@ -46,7 +48,7 @@ Specify the name of your server-side file here, to whick the `DataTables Quick` 
 
 # Server-side file
 
-Server-side file should fetch the query. The total number of rows available in the table and the total found results as per query. You can use any server-side language with it as per you comfort. Here some sample code for [PHP](https://github.com/mohiwalla/dtquick#php) as server-side script has been provided for a reference.
+Server-side file should fetch the query. The total number of rows available in the table and the total found results as per query. You can use any server-side language with it as per you comfort. Here some sample code for [PHP](#php) as server-side script has been provided for a reference.
 
 ## PHP
 
@@ -56,13 +58,13 @@ Server-side file should fetch the query. The total number of rows available in t
 $con = mysqli_connect("localhost", 'root', '', "myDB");
 
 if(!$con)
-    die('could not get the connection');
+    die('Could not get the connection!!');
 
 $rows = mysqli_query($con, $_REQUEST['query']);
 $total = mysqli_fetch_assoc(mysqli_query($con, "SELECT count(*) as allcount from datatable"))['allcount'];
 
 if (!$rows)
-    echo "Ducked so bad 😶";
+    echo "Ducked 😶";
 
 $found = 0;
 $data = array();
@@ -99,6 +101,6 @@ Inspired By : `DataTables`
 
 
 #  **Note**
-Before you start using it in production, Please note that this file sends query from client-side to the server-side which is not tradional at all. As the result of which anyone from the client side directly can modify the query to fetch the data from the your table, which is a potential risk to your data. If you want to have safety of please consider using [DataTables](https://datatables.net/) as it creates queries at server end and lower the risk. The sole purpose of creating queries at client-end was to keep the structure of the both client and server side file simple and easy to use for newbies. And if you find any bugs in the code or any possible improvements wihtout compromising the simplicity of usage you can send pull request or modified code on this hindustanjindabad5911@gmail.com. Existing code will be replaced by the code provided by you as soon as the eximination will finish and your name will be in the list of [contributes](https://github.com/mohiwalla/dtquick#contributers--mohiwalla) as well, So don't hesitate to give it a try. Lastly if you found it useful please consider giving a star to this repository.
+Before you start using it in production, Please note that this file sends query from client-side to the server-side which is not tradional at all. As the result of which anyone from the client side directly can modify the query to fetch the data from the your table, which is a potential risk to your data. If you want to have safety of please consider using [DataTables](https://datatables.net/) as it creates queries at server end and lower the risk. The sole purpose of creating queries at client-end was to keep the structure of the both client and server side file simple and easy to use for newbies. And if you find any bugs in the code or any possible improvements wihtout compromising the simplicity of usage you can send pull request or modified code on this hindustanjindabad5911@gmail.com. Existing code will be replaced by the code provided by you as soon as the eximination will finish and your name will be in the list of contributes as well, So don't hesitate to give it a try. Lastly if you found it useful please consider giving a star to this repository.
 
 Thanks a lot......
