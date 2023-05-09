@@ -8,7 +8,7 @@ You can either include this script tag in the `<head>` section of you document..
 <script src="https://mohiwalla.github.io/dtquick/index.js" async defer></script>
 ```
 
-or just copy the code from [index.html](https://github.com/mohiwalla/dtquick/blob/mohiwalla/index.html) and paste at the end of your document
+or just copy the code from [index.js](https://github.com/mohiwalla/dtquick/blob/mohiwalla/index.js) and paste at the end of your document
 
 # Initialization
 
