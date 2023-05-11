@@ -19,7 +19,7 @@ You can use `dtquick` with various methods given below:
 - If you have [node.js](https://nodejs.org/en) installed on your machine you can use the following command to install the module:
 
 ```console
-    npm install dtquick@1.0.0
+    npm i dtquick
 ```
 
 - Download the [index.js](https://github.com/mohiwalla/dtquick/blob/mohiwalla/index.js) and include the it in your `HTML` document like given below:
