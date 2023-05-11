@@ -99,10 +99,12 @@ Made by: `Kamaljot Singh`
 
 Inspired by: `DataTables`
 
-### Contributors: [mohiwalla](https://github.com/mohiwalla/), [YshDhiman](https://github.com/yshdhiman)
+### Contributors: 
+
+[mohiwalla](https://github.com/mohiwalla/), [YshDhiman](https://github.com/yshdhiman)
 
 ## Note
 
-Before you start using it in production, please note that this file sends a query from the client-side to the server-side, which is not traditional at all. As a result of this, anyone from the client side can modify the query to fetch the data from your table, which is a potential risk to your data. If you want to have safety, please consider using [DataTables](https://datatables.net/) as it creates queries at the server end and lowers the risk. The sole purpose of creating queries at the client end was to keep the structure of both client and server-side files simple and easy to use for newbies. If you find any bugs in the code or any possible improvements without compromising the simplicity of usage, you can send a pull request or modified code to hindustanjindabad5911@gmail.com. The existing code will be replaced by the code provided by you as soon as the examination is finished, and your name will be in the list of [Contributors](#contributors-mohiwalla-yshdhiman) as well, so don't hesitate to give it a try. Lastly, if you liked the effort, please consider giving a star to this repository.
+Before you start using it in production, please note that this file sends a query from the client-side to the server-side, which is not traditional at all. As a result of this, anyone from the client side can modify the query to fetch the data from your table, which is a potential risk to your data. If you want to have safety, please consider using [DataTables](https://datatables.net/) as it creates queries at the server end and lowers the risk. The sole purpose of creating queries at the client end was to keep the structure of both client and server-side files simple and easy to use for newbies. If you find any bugs in the code or any possible improvements without compromising the simplicity of usage, you can send a pull request or modified code to hindustanjindabad5911@gmail.com. The existing code will be replaced by the code provided by you as soon as the examination is finished, and your name will be in the list of [Contributors](#contributors) as well, so don't hesitate to give it a try. Lastly, if you liked the effort, please consider giving a star to this repository.
 
 Thank you.
