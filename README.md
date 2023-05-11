@@ -8,7 +8,16 @@ You can either include this CDN in the `<head>` section of your `HTML` document:
 <script src="https://cdn.jsdelivr.net/gh/mohiwalla/dtquick@mohiwalla/index.js" async defer></script>
 ```
 
-Or just copy the code from [index.js](https://github.com/mohiwalla/dtquick/blob/mohiwalla/index.js) and paste it at the end of your document.
+or if you have [https://git-scm.com/](https://git-scm.com/downloads) installed on you machine, clone this repository using the following command.
+
+```bash
+
+git clone https://github.com/mohiwalla/dtquick.git
+
+```
+
+or just copy the code from [index.js](https://github.com/mohiwalla/dtquick/blob/mohiwalla/index.js) and paste it at the end of your document.
+
 
 ## Initialization
 
@@ -101,7 +110,7 @@ Inspired by: `DataTables`
 
 ### Contributors: 
 
-[mohiwalla](https://github.com/mohiwalla/), [YshDhiman](https://github.com/yshdhiman)
+[mohiwalla](https://github.com/mohiwalla/), [YshDhiman](https://github.com/yshdhiman/)
 
 ## Note
 
