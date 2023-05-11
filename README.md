@@ -2,7 +2,7 @@
 
 DataTables Quick is a extremely light, fast and easy to use pre-written dyanmic JavaScript code to help programmers to display there data from data-base with almost no husstle. It requires quite less server side code and generates the queries itself. It is extremely easy to use and saves tons of time.
 
-You can either include this script tag in the `<head>` section of you document...
+You can either include this cdn in the `<head>` section of you `HTML` document...
 
 ```HTML
 <script src="https://cdn.jsdelivr.net/gh/mohiwalla/dtquick@mohiwalla/index.js" async defer></script>
@@ -98,7 +98,7 @@ Made by : `Kamaljot Singh`
 
 Inspired By : `DataTables`
 
-## Contributers : [mohiwalla](https://github.com/mohiwalla/)
+### Contributers : [mohiwalla](https://github.com/mohiwalla/), [YshDhiman](https://github.com/yshdhiman)
 
 
 #  **Note**
