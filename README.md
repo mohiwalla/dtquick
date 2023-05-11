@@ -5,7 +5,7 @@ DataTables Quick is a extremely light, fast and easy to use pre-written dyanmic 
 You can either include this script tag in the `<head>` section of you document...
 
 ```HTML
-<script src="https://mohiwalla.github.io/dtquick/index.js" async defer></script>
+<script src="https://cdn.jsdelivr.net/gh/mohiwalla/dtquick@mohiwalla/index.js" async defer></script>
 ```
 
 or just copy the code from [index.js](https://github.com/mohiwalla/dtquick/blob/mohiwalla/index.js) and paste at the end of your document
@@ -39,7 +39,7 @@ Specify the name of your server-side file here, to whick the `DataTables Quick` 
 ```HTML
 <div id="datatable" db-table="datatable" file-name="fetchli.php" cols="Address = Address,......"></div>
 
-<script src="https://mohiwalla.github.io/dtquick/index.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/mohiwalla/dtquick@mohiwalla/index.js" async defer></script>
 ```
 
 
