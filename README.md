@@ -37,7 +37,7 @@ Specify the name of your server-side file here, to which DataTables Quick will s
 ## Complete example
 
 ```HTML
-<div id="datatable" db-table="datatable" file-name="fetchli.php" cols="Address = Address,......"></div>
+<div id="datatable" db-table="datatable" file-name="fetch.php" cols="Address = Address,......"></div>
 
 <script src="https://cdn.jsdelivr.net/gh/mohiwalla/dtquick@mohiwalla/index.js" async defer></script>
 ```
