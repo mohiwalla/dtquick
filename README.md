@@ -7,25 +7,25 @@ You can use `dtquick` with various methods given below:
 - Include this CDN in the `<head>` section of your `HTML` document:
 
 ```HTML
-    <script src="https://cdn.jsdelivr.net/gh/mohiwalla/dtquick@mohiwalla/index.js" async defer></script>
+<script src="https://cdn.jsdelivr.net/gh/mohiwalla/dtquick@mohiwalla/index.js" async defer></script>
 ```
 
 - If you have [Git](https://git-scm.com/downloads) installed on you machine, clone this repository using the following command:
 
 ```console
-    git clone https://github.com/mohiwalla/dtquick.git
+git clone https://github.com/mohiwalla/dtquick.git
 ```
 
 - If you have [node.js](https://nodejs.org/en) installed on your machine you can use the following command to install the module:
 
 ```console
-    npm i dtquick
+npm i dtquick
 ```
 
 - Download the [index.js](https://github.com/mohiwalla/dtquick/blob/mohiwalla/index.js) and include the it in your `HTML` document like given below:
 
 ```HTML
-    <script src="path/to/index.js" async defer></script>
+<script src="path/to/index.js" async defer></script>
 ```
 
 
@@ -49,7 +49,7 @@ It takes the name of the table as an argument to use it in the MySQL query at th
 All the names of the columns that you want to display in the table should be specified here in a comma-separated form (with no need to worry about extra or fewer spaces). Every column name contains two parts: one before the assignment operator for client-side to display in the table's `<th>` and another for the server-side (which name you have used to create the column in the database), something like this:
 
 ```CSS
-    cols="S. no. = S, name = Name, E-mail = Email, Pass = Password"
+cols="S. no. = S, name = Name, E-mail = Email, Pass = Password"
 ```
 
 #### file-name
@@ -59,9 +59,9 @@ Specify the name of your server-side file here, to which DataTables Quick will s
 ## Example for client-side
 
 ```HTML
-    <div id="datatable" db-table="datatable" file-name="fetch.php" cols="Address = Address,......"></div>
+<div id="datatable" db-table="datatable" file-name="fetch.php" cols="Address = Address,......"></div>
 
-    <script src="https://cdn.jsdelivr.net/gh/mohiwalla/dtquick@mohiwalla/index.js" async defer></script>
+<script src="https://cdn.jsdelivr.net/gh/mohiwalla/dtquick@mohiwalla/index.js" async defer></script>
 ```
 
 ## Server-side file
