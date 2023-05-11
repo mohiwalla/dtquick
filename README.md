@@ -8,7 +8,7 @@ You can either include this CDN in the `<head>` section of your `HTML` document:
 <script src="https://cdn.jsdelivr.net/gh/mohiwalla/dtquick@mohiwalla/index.js" async defer></script>
 ```
 
-or if you have [Git](https://git-scm.com/downloads) installed on you machine, clone this repository using the following command.
+or if you have [Git](https://git-scm.com/downloads) installed on you machine, clone this repository using the following command:
 
 ```bash
 
