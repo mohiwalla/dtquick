@@ -78,16 +78,14 @@ $table = "datatable";
 
 $con = mysqli_connect("localhost", 'root', '', $database);
 
-if (!$con) {
+if (!$con)
     die('Could not get the connection');
-}
 
 $rows = mysqli_query($con, $_REQUEST['query']);
 $total = mysqli_fetch_assoc(mysqli_query($con, "SELECT count(*) as allcount from $table"))['allcount'];
 
-if (!$rows) {
+if (!$rows)
     echo "Query failed 😶";
-}
 
 $found = 0;
 $data = array();
@@ -95,9 +93,8 @@ $data = array();
 while ($row = mysqli_fetch_assoc($rows)) {
     $found++;
     $temp = array();
-    foreach($row as $key => $value) {
+    foreach($row as $key => $value)
         $temp[$key] = $value;
-    }
 
     $data[] = $temp;
 }
