@@ -1,52 +1,60 @@
 # DataTables Quick
 
-DataTables Quick is an extremely light, fast, and easy-to-use pre-written dynamic JavaScript code that helps programmers display their data from databases with almost no hassle. It requires minimal server-side code and generates queries automatically, saving tons of time.
+DataTables Quick is a lightweight and fast JavaScript library that simplifies the process of displaying data from databases. With minimal server-side code required, DataTables Quick generates queries automatically and saves time.
 
-You can use `dtquick` with various methods given below:
+## Usage
 
-- Include this CDN in the `<head>` section of your `HTML` document:
+There are several ways to use DataTables Quick:
+
+### Using CDN
+
+Include the following script tag in the `<head>` section of your HTML document to use DataTables Quick via CDN:
 
 ```HTML
 <script src="https://cdn.jsdelivr.net/gh/mohiwalla/dtquick@mohiwalla/index.js" async defer></script>
 ```
 
-- If you have [Git](https://git-scm.com/downloads) installed on you machine, clone this repository using the following command:
+### Cloning the Repository
+
+If you have Git installed on your machine, you can clone the repository using the following command:
 
 ```console
 git clone https://github.com/mohiwalla/dtquick.git
 ```
 
-- If you have [node.js](https://nodejs.org/en) installed on your machine you can use the following command to install the module:
+### Installing via npm
+
+If you have Node.js installed on your machine, you can use the following command to install the module:
 
 ```console
 npm i dtquick
 ```
 
-- Download the [index.js](https://github.com/mohiwalla/dtquick/blob/mohiwalla/index.js) and include the it in your `HTML` document like given below:
+### Downloading the Script
+
+You can also download the [index.js](https://github.com/mohiwalla/dtquick/blob/mohiwalla/index.js) file and include it in your HTML document using the following script tag:
 
 ```HTML
 <script src="path/to/index.js" async defer></script>
 ```
 
-
-- Or just Copy the code from [index.js](https://github.com/mohiwalla/dtquick/blob/mohiwalla/index.js) and paste in `<script>` tag in your document.
-
+Alternatively, you can copy the code from [index.js](https://github.com/mohiwalla/dtquick/blob/mohiwalla/index.js) and paste it into a `<script>` tag in your HTML document.
 
 ## Initialization
 
-To initialize DataTables Quick, you just need to add a `<div>` element with `id="datatable"`.
+To initialize DataTables Quick, add a `<div>` element with `id="datatable"`.
 
 ### Attributes
 
-Three attributes have to be added to this `<div>`:
+The following attributes must be added to the `<div>` element:
 
 #### db-table
 
-It takes the name of the table as an argument to use it in the MySQL query at the server-side to fetch the data from the database.
+Specifies the name of the table to be used in the MySQL query to fetch data from the database.
 
 #### cols
 
-All the names of the columns that you want to display in the table should be specified here in a comma-separated form (with no need to worry about extra or fewer spaces). Every column name contains two parts: one before the assignment operator for client-side to display in the table's `<th>` and another for the server-side (which name you have used to create the column in the database), something like this:
+Specifies the names of the columns to be displayed in the table as a comma-separated list. Each column name should contain two parts: one for the client-side to display in the table's `<th>` and another for the server-side (which is the name used to create the column in the database). For example:
 
 ```CSS
 cols="S. no. = S, name = Name, E-mail = Email, Pass = Password"
@@ -54,9 +62,9 @@ cols="S. no. = S, name = Name, E-mail = Email, Pass = Password"
 
 #### file-name
 
-Specify the name of your server-side file here, to which DataTables Quick will send an AJAX request for the data.
+Specifies the name of the server-side file to which DataTables Quick will send an AJAX request for data.
 
-## Example for client-side
+## Example
 
 ```HTML
 <div id="datatable" db-table="datatable" file-name="fetch.php" cols="Address = Address,......"></div>
@@ -64,9 +72,9 @@ Specify the name of your server-side file here, to which DataTables Quick will s
 <script src="https://cdn.jsdelivr.net/gh/mohiwalla/dtquick@mohiwalla/index.js" async defer></script>
 ```
 
-## Server-side file
+## Server-Side File
 
-The server-side file should fetch the query, the total number of rows available in the table, and the total found results as per query. You can use any server-side language with it as per your comfort. Here is some sample code for [PHP](#php) as a server-side script provided for reference.
+The server-side file should fetch the query, the total number of rows available in the table, and the total found results as per query. You can use any server-side language with it as per your comfort. Here is some sample code for PHP as a server-side script provided for reference.
 
 ### PHP
 
@@ -112,18 +120,18 @@ echo json_encode($response);
 
 ## Miscellaneous
 
-Credits: `Mr. Sumit Kumar Munjal`, `Mr. Prabhjot Singh`
+Credits: Mr. Sumit Kumar Munjal, Mr. Prabhjot Singh
 
-Made by: `Kamaljot Singh`
+Made by: Kamaljot Singh
 
-Inspired by: `DataTables`
+Inspired by: DataTables
 
-### Contributors: 
+### Contributors 
 
 [mohiwalla](https://github.com/mohiwalla/), [YshDhiman](https://github.com/yshdhiman/)
 
-## **Note**
+## Note
 
-Before you start using it in production, please note that this file sends a query from the client-side to the server-side, which is not traditional at all. As a result of this, anyone from the client side can modify the query to fetch the data from your table, which is a potential risk to your data. If you want to have safety, please consider using [DataTables](https://datatables.net/) as it creates queries at the server end and lowers the risk. The sole purpose of creating queries at the client end was to keep the structure of both client and server-side files simple and easy to use for newbies. If you find any bugs in the code or any possible improvements without compromising the simplicity of usage, you can send a pull request or modified code to hindustanjindabad5911@gmail.com. The existing code will be replaced by the code provided by you as soon as the examination is finished, and your name will be in the list of [Contributors](#contributors) as well, so don't hesitate to give it a try. Lastly, if you liked the effort, please consider giving a star to this repository.
+Before using DataTables Quick in production, please note that this library sends a query from the client-side to the server-side, which is not traditional. Therefore, anyone from the client-side can modify the query to fetch data from your table, which is a potential risk to your data. If you want to have safety, please consider using [DataTables](https://datatables.net/) as it creates queries at the server end and lowers the risk. The purpose of creating queries at the client-end was to keep the structure of both client and server-side files simple and easy to use for newbies. If you find any bugs in the code or any possible improvements without compromising the simplicity of usage, you can send a pull request or modified code to hindustanjindabad5911@gmail.com. The existing code will be replaced by the code provided by you as soon as the examination is finished, and your name will be in the list of [Contributors](#contributors) as well, so don't hesitate to give it a try. Lastly, if you liked the effort, please consider giving a star to this repository.
 
 Thank you.
