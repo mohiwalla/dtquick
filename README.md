@@ -27,7 +27,7 @@ git clone https://github.com/mohiwalla/dtquick.git
 If you have Node.js installed on your machine, you can use the following command to install the module:
 
 ```console
-npm install dtquick -g
+npm i dtquick
 ```
 
 ### Downloading the Script
