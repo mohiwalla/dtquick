@@ -19,7 +19,7 @@ Include the following script tag in the `<head>` section of your HTML document t
 If you have Git installed on your machine, you can clone the repository using the following command:
 
 ```console
-git clone https://github.com/mohiwalla/dtquick.git
+git clone https://github.com/mohiwalla/dtquick
 ```
 
 ### Installing via npm
