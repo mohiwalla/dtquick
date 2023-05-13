@@ -6,7 +6,7 @@ DataTables Quick is a lightweight and fast JavaScript library that simplifies th
 
 There are several ways to use DataTables Quick:
 
-### Using CDN
+- #### Using CDN
 
 Include the following script tag in the `<head>` section of your HTML document to use DataTables Quick via CDN:
 
@@ -14,7 +14,7 @@ Include the following script tag in the `<head>` section of your HTML document t
 <script src="https://cdn.jsdelivr.net/gh/mohiwalla/dtquick@mohiwalla/index.js" async defer></script>
 ```
 
-### Cloning the Repository
+- #### Cloning the Repository
 
 If you have Git installed on your machine, you can clone the repository using the following command:
 
@@ -22,7 +22,7 @@ If you have Git installed on your machine, you can clone the repository using th
 git clone https://github.com/mohiwalla/dtquick
 ```
 
-### Installing via npm
+- #### Installing via npm
 
 If you have Node.js installed on your machine, you can use the following command to install the module:
 
@@ -30,7 +30,7 @@ If you have Node.js installed on your machine, you can use the following command
 npm i dtquick
 ```
 
-### Downloading the Script
+- #### Downloading the Script
 
 You can also download the [index.js](https://github.com/mohiwalla/dtquick/blob/mohiwalla/index.js) file and include it in your HTML document using the following script tag:
 
@@ -48,11 +48,11 @@ To initialize DataTables Quick, add a `<div>` element with `id="datatable"`.
 
 The following attributes must be added to the `<div>` element:
 
-#### db-table
+- #### db-table
 
 Specifies the name of the table to be used in the MySQL query to fetch data from the database.
 
-#### cols
+- #### cols
 
 Specifies the names of the columns to be displayed in the table as a comma-separated list. Each column name should contain two parts: one for the client-side to display in the table's `<th>` and another for the server-side (which is the name used to create the column in the database). For example:
 
@@ -60,7 +60,7 @@ Specifies the names of the columns to be displayed in the table as a comma-separ
 cols="S. no. = S, name = Name, E-mail = Email, Pass = Password"
 ```
 
-#### file-name
+- #### file-name
 
 Specifies the name of the server-side file to which DataTables Quick will send an AJAX request for data.
 
