@@ -11,7 +11,7 @@ There are several ways to use DataTables Quick:
 Include the following script tag in the `<head>` section of your HTML document to use DataTables Quick via CDN:
 
 ```HTML
-<script src="https://cdn.jsdelivr.net/gh/mohiwalla/dtquick@mohiwalla/index.js" async defer></script>
+<script src="https://cdn.jsdelivr.net/gh/mohiwalla/dtquick@mohiwalla/index.js" defer></script>
 ```
 
 - #### Cloning the Repository
@@ -35,7 +35,7 @@ npm i dtquick
 You can also download the [index.js](https://github.com/mohiwalla/dtquick/blob/mohiwalla/index.js) file and include it in your HTML document using the following script tag:
 
 ```HTML
-<script src="path/to/index.js" async defer></script>
+<script src="path/to/index.js" defer></script>
 ```
 
 Alternatively, you can copy the code from [index.js](https://github.com/mohiwalla/dtquick/blob/mohiwalla/index.js) and paste it into a `<script>` tag in your HTML document.
@@ -68,8 +68,7 @@ Specifies the name of the server-side file to which DataTables Quick will send a
 
 ```HTML
 <div id="datatable" db-table="datatable" file-name="fetch.php" cols="Address = Address,......"></div>
-
-<script src="https://cdn.jsdelivr.net/gh/mohiwalla/dtquick@mohiwalla/index.js" async defer></script>
+<script src="https://cdn.jsdelivr.net/gh/mohiwalla/dtquick@mohiwalla/index.js" defer></script>
 ```
 
 ## Server-Side File
