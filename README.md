@@ -68,6 +68,7 @@ Specifies the name of the server-side file to which DataTables Quick will send a
 
 ```HTML
 <div id="datatable" db-table="datatable" file-name="fetch.php" cols="Address = Address,......"></div>
+
 <script src="https://cdn.jsdelivr.net/gh/mohiwalla/dtquick@mohiwalla/index.js" defer></script>
 ```
 
