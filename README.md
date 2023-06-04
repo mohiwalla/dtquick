@@ -27,7 +27,7 @@ git clone https://github.com/mohiwalla/dtquick
 If you have Node.js installed on your machine, you can use the following command to install the module:
 
 ```console
-npm i dtquick
+npm install dtquick
 ```
 
 - #### Downloading the Script
@@ -81,16 +81,14 @@ The server-side file should fetch the query, the total number of rows available 
 ```PHP
 <?php
 
-$database = "myDB";
-$table = "datatable";
+$database = "newDB";
 
 $con = mysqli_connect("localhost", 'root', '', $database);
-
 if (!$con)
-    die('Could not get the connection');
+    exit('Could not get the connection');
 
 $rows = mysqli_query($con, $_REQUEST['query']);
-$total = mysqli_fetch_assoc(mysqli_query($con, "SELECT count(*) as allcount from $table"))['allcount'];
+$total = mysqli_fetch_assoc(mysqli_query($con, $_REQUEST['totalRecords']))['totalRecords'];
 
 if (!$rows)
     echo "Query failed 😶";
@@ -101,7 +99,7 @@ $data = array();
 while ($row = mysqli_fetch_assoc($rows)) {
     $found++;
     $temp = array();
-    foreach($row as $key => $value)
+    foreach ($row as $key => $value)
         $temp[$key] = $value;
 
     $data[] = $temp;
@@ -114,7 +112,6 @@ $response = array(
 );
 
 echo json_encode($response);
-
 ?>
 ```
 
