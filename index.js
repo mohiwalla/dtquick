@@ -126,7 +126,7 @@ if (document.getElementById('datatable')) {
 
     const id = (str) => document.getElementById(str);
     var notFound = document.getElementById('notFound');
-    var orderBy = cols[0].split("=")[1], limit = "10", response, key = '', searchFrom = '', order = "ASC", pageNo = 1, searchQuery;
+    var orderBy = cols[0].split("=")[1], limit = 25, response, key = '', searchFrom = '', order = "ASC", pageNo = 1, searchQuery;
 
     id("limit").addEventListener("input", function () {
         limit = this.value;
