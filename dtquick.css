@@ -1,0 +1,51 @@
+.dtquick {
+    padding: 20px 70px 50px;
+}
+
+.dtHeading {
+    font-weight: 700;
+    font-family: 'Tilt Neon', cursive;
+    text-align: center;
+    margin-top: 32px;
+    font-size: 50px;
+    background: linear-gradient(to right, #30CFD0 0%, #330867 100%);
+    -webkit-background-clip: text;
+    user-select: none;
+    -webkit-text-fill-color: transparent;
+}
+
+.dtquick label,
+.dtquick div div#pages,
+h1#notFound {
+    user-select: none !important;
+    cursor: pointer;
+}
+
+.dtquick img {
+    width: 20px;
+    mix-blend-mode: multiply;
+    margin-left: 12px;
+    transition: all 0.3s;
+}
+
+.dtquick table thead th {
+    cursor: pointer;
+    user-select: none;
+}
+
+.dtquick div div.taskBar {
+    display: grid;
+    margin-bottom: 30px;
+    grid-template-columns: auto 1fr auto 300px;
+    gap: 100px;
+}
+
+.dtquick div div div {
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 10px;
+}
+
+.dtquick div div.taskBar div label {
+    margin: 7px 0 0;
+}
