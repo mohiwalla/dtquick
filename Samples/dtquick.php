@@ -12,7 +12,7 @@ $rows = mysqli_query($con, $_REQUEST['query']);
 $total = mysqli_fetch_assoc(mysqli_query($con, $_REQUEST['totalRecords']))['totalRecords'];
 
 if (!$rows)
-    echo "Query failed 😶";
+    die(mysqli_error($con));
 
 $found = 0;
 $data = array();
