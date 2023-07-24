@@ -74,46 +74,11 @@ Specifies the name of the server-side file to which DataTables Quick will send a
 
 ## Server-Side File
 
-The server-side file should fetch the query, the total number of rows available in the table, and the total found results as per query. You can use any server-side language with it as per your comfort. Here is some sample code for PHP as a server-side script provided for reference.
-
-### PHP
-
-```PHP
-<?php
-
-$database = "newDB";
-
-$con = mysqli_connect("localhost", 'root', '', $database);
-if (!$con)
-    exit('Could not get the connection');
-
-$rows = mysqli_query($con, $_REQUEST['query']);
-$total = mysqli_fetch_assoc(mysqli_query($con, $_REQUEST['totalRecords']))['totalRecords'];
-
-if (!$rows)
-    echo "Query failed 😶";
-
-$found = 0;
-$data = array();
-
-while ($row = mysqli_fetch_assoc($rows)) {
-    $found++;
-    $temp = array();
-    foreach ($row as $key => $value)
-        $temp[$key] = $value;
-
-    $data[] = $temp;
-}
-
-$response = array(
-    "data" => $data,
-    "found" => $found,
-    "total" => $total
-);
-
-echo json_encode($response);
-?>
-```
+The server-side file should fetch the query, the total number of rows available in the table, and the total found results as per query. You can use any server-side language with it as per your comfort. Code samples for server-side script have been provided for reference from the list of languages given below.
+- [PHP](https://github.com/mohiwalla/dtquick/blob/mohiwalla/Samples/dtquick.php)
+- [ColdFusion](https://github.com/mohiwalla/dtquick/blob/mohiwalla/Samples/dtquick.cfm)
+- [Node.js](https://github.com/mohiwalla/dtquick/blob/mohiwalla/Samples/dtquick.js)
+- [Python](https://github.com/mohiwalla/dtquick/blob/mohiwalla/Samples/dtquick.py)
 
 ## Miscellaneous
 
