@@ -1,11 +1,7 @@
-.dtquick {
-    padding: 20px 70px 50px;
-}
-
 .dtquick label,
 .dtquick div div#pages,
 h1#notFound {
-    user-select: none !important;
+    user-select: none;
     cursor: pointer;
 }
 
