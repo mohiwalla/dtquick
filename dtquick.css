@@ -2,18 +2,6 @@
     padding: 20px 70px 50px;
 }
 
-.dtHeading {
-    font-weight: 700;
-    font-family: 'Tilt Neon', cursive;
-    text-align: center;
-    margin-top: 32px;
-    font-size: 50px;
-    background: linear-gradient(to right, #30CFD0 0%, #330867 100%);
-    -webkit-background-clip: text;
-    user-select: none;
-    -webkit-text-fill-color: transparent;
-}
-
 .dtquick label,
 .dtquick div div#pages,
 h1#notFound {
