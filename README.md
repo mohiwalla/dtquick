@@ -1,4 +1,4 @@
-# DataTables Quick
+# dtquick
 
 DataTables Quick is a lightweight and fast JavaScript library that simplifies the process of displaying data from databases. With minimal server-side code required, DataTables Quick generates queries automatically and saves time. [Live demo here](https://mohiwalla.000webhostapp.com/dtquick/)
 
@@ -117,15 +117,11 @@ echo json_encode($response);
 
 ## Miscellaneous
 
-Credits: Mr. Sumit Kumar Munjal, Mr. Prabhjot Singh
+Credits: `Mr. Sumit Kumar Munjal`, `Mr. Prabhjot Singh`
 
-Made by: Kamaljot Singh
+Made by: `mohiwalla`
 
-Inspired by: DataTables
-
-### Contributors 
-
-[mohiwalla](https://github.com/mohiwalla/), [YshDhiman](https://github.com/yshdhiman/)
+Inspired by: `DataTables`
 
 ## Note
 
@@ -133,4 +129,4 @@ Before using DataTables Quick in production, please note that this library sends
 
 ## Licence
 
-[MIT](https://github.com/mohiwalla/dtquick/blob/mohiwalla/LICENSE)
+dtquick is distributed under [MIT LICENCE.](https://github.com/mohiwalla/dtquick/blob/mohiwalla/LICENSE)
