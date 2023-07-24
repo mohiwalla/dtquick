@@ -1,6 +1,6 @@
 # DataTables Quick
 
-DataTables Quick is a lightweight and fast JavaScript library that simplifies the process of displaying data from databases. With minimal server-side code required, DataTables Quick generates queries automatically and saves time. Check a demo [here](https://mohiwalla.000webhostapp.com/dtquick/)
+DataTables Quick is a lightweight and fast JavaScript library that simplifies the process of displaying data from databases. With minimal server-side code required, DataTables Quick generates queries automatically and saves time. [Live demo here](https://mohiwalla.000webhostapp.com/dtquick/)
 
 ## Usage
 
