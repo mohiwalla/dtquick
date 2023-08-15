@@ -1,17 +1,17 @@
-if (document.getElementById('datatable')) {
-    if (!document.getElementById('datatable').getAttribute('db-table'))
+if (document.getElementById('dtquick')) {
+    if (!document.getElementById('dtquick').getAttribute('db-table'))
         throw ("Please note you can't continue using without the table name. Use attribute 'db-table' to specify the table name. For more info visit: https://github.com/mohiwalla/dtquick#:~:text=db%2Dtable,from%20the%20database.");
-    if (!document.getElementById('datatable').getAttribute('cols'))
+    if (!document.getElementById('dtquick').getAttribute('cols'))
         throw ("Please note you can't continue using without specifying the columns. Use attribute 'cols' to specify the columns. For more info visit: https://github.com/mohiwalla/dtquick#:~:text=cols,Email%2C%20Pass%20%3D%20Password%22");
-    if (!document.getElementById('datatable').getAttribute('file-name'))
+    if (!document.getElementById('dtquick').getAttribute('file-name'))
         throw ("Please note you can't continue using without specifying the file-name. Use attribute 'file-name' to specify the file where to AJAX request has to be sent. For more info visit: https://github.com/mohiwalla/dtquick#:~:text=file%2Dname,request%20for%20data.");
     document.head.innerHTML += `<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap" rel="stylesheet"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"><link href="https://fonts.googleapis.com/css2?family=Montserrat" rel="stylesheet"><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="dtquick.css">`;
 
     document.body.innerHTML += `<div class="dtquick"> <div> <div class="taskBar"> <div class="limitDiv"> <label for="limit">Limit</label> <select class="form-control" name="limit" class="dropdown" id="limit"> <option value="25">25</option> <option value="50">50</option> <option value="100">100</option> <option value="250">250</option> <option value="500">500</option> </select> </div> <div></div> <div class="searchDiv"> <label for="searchFrom">From </label> <select class="dropdown form-control" name="select" oninput="searchFrom = this.value; fetch();" id="searchFrom"> <option value="">All</option> </select> </div> <div class="searchFrom"> <label for="search">Search</label><input placeholder="Press '/' to focus" type="text" name="search" oninput="key = value; pageNo = 1; fetch();" class="form-control" id="search"> </div> </div> <table style="width:95vw;" id="table" class="table-hover table table-striped-columns"> <thead> <tr id="th"></tr> </thead> <tbody id="tbody"></tbody> </table> <h1 class="tcenter" id="notFound" style="display:none; font-weight:700; font-family: 'Tilt Neon', cursive; text-align: center;">No records found Â¯\\_(ãƒ„)_/Â¯ </h1> <div id="pages"> <nav> <ul class="pagination justify-content-end"></ul> </nav> <div style="float:left; margin-top:-45px;" class="info"></div> </div> </div> </div>`;
 
-    var cols = document.getElementById("datatable").getAttribute("cols").replace(/ /g, "").split(",");
-    var db_table = document.getElementById("datatable").getAttribute("db-table");
-    var fileName = document.getElementById("datatable").getAttribute("file-name");
+    var cols = document.getElementById("dtquick").getAttribute("cols").replace(/ /g, "").split(",");
+    var db_table = document.getElementById("dtquick").getAttribute("db-table");
+    var fileName = document.getElementById("dtquick").getAttribute("file-name");
 
     for (i = 0; i < cols.length; i++) {
         var col = cols[i].split("=");
