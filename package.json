@@ -1,0 +1,25 @@
+{
+  "name": "dtquick",
+  "version": "1.0.2",
+  "description": "dtquick is an efficient and swift JavaScript library that streamlines the task of presenting data from databases.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mohiwalla/dtquick.git"
+  },
+  "keywords": [
+    "dtquick",
+    "mohiwalla",
+    "datatables",
+    "database"
+  ],
+  "author": "mohiwalla",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mohiwalla/dtquick/issues"
+  },
+  "homepage": "https://github.com/mohiwalla/dtquick#readme"
+}
