@@ -75,10 +75,10 @@ Specifies the name of the server-side file to which ***dtquick*** will send an A
 ## Server-Side File
 
 The server-side file should fetch the query, the total number of rows available in the table, and the total found results as per the query. You can use any server-side language with it as per your comfort. Code samples for server-side scripts have been provided for reference in the following languages:
-- [PHP](https://github.com/mohiwalla/dtquick/blob/mohiwalla/Samples/dtquick.php)
-- [ColdFusion](https://github.com/mohiwalla/dtquick/blob/mohiwalla/Samples/dtquick.cfm)
-- [Node.js](https://github.com/mohiwalla/dtquick/blob/mohiwalla/Samples/dtquick.js)
-- [Python](https://github.com/mohiwalla/dtquick/blob/mohiwalla/Samples/dtquick.py)
+- [PHP](https://github.com/mohiwalla/dtquick/blob/mohiwalla/Samples/index.php)
+- [ColdFusion](https://github.com/mohiwalla/dtquick/blob/mohiwalla/Samples/index.cfm)
+- [Node.js](https://github.com/mohiwalla/dtquick/blob/mohiwalla/Samples/index.js)
+- [Python](https://github.com/mohiwalla/dtquick/blob/mohiwalla/Samples/index.py)
 
 ## Note
 
